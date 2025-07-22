@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - ShopFusion</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="brand-name">ShopFusion</span>
+                        <span class="brand-tagline">Modern Shopping Experience</span>
+                    </div>
+                </div>
+                
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                    <a href="index.html#products" class="nav-link">Produk</a>
+                    <a href="index.html#categories" class="nav-link">Kategori</a>
+                    <a href="contact.html" class="nav-link active">Kontak</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="action-btn theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="index.html" class="action-btn">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="contact-hero">
+            <div class="hero-background">
+                <div class="gradient-orb orb-1"></div>
+                <div class="gradient-orb orb-2"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Hubungi Kami</h1>
+                    <p>Kami siap membantu Anda dengan layanan terbaik 24/7</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+            <div class="container">
+                <div class="actions-grid">
+                    <a href="https://wa.me/087886425562" class="action-card whatsapp" target="_blank">
+                        <div class="action-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>Chat WhatsApp</h3>
+                        <p>Respon cepat dalam hitungan menit</p>
+                        <span class="action-label">087886425562</span>
+                    </a>
+                    
+                    <a href="tel:087886425562" class="action-card phone">
+                        <div class="action-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Telepon Langsung</h3>
+                        <p>Hubungi kami untuk bantuan segera</p>
+                        <span class="action-label">087886425562</span>
+                    </a>
+                    
+                    <a href="mailto:info@shopfusion.com" class="action-card email">
+                        <div class="action-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Kirim Email</h3>
+                        <p>Untuk pertanyaan detail dan kompleks</p>
+                        <span class="action-label">info@shopfusion.com</span>
+                    </a>
+                    
+                    <div class="action-card support">
+                        <div class="action-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Live Support</h3>
+                        <p>Tim customer service 24/7</p>
+                        <span class="action-label">Online</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="contact-info">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Contact Form -->
+                    <div class="contact-form-section">
+                        <h2>Kirim Pesan</h2>
+                        <p>Isi form di bawah ini dan kami akan merespon dalam 24 jam</p>
+                        
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="firstName">Nama Depan *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Nama Belakang *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="email@example.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Nomor WhatsApp *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="08xxxxxxxxxx" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subjek *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Pilih Subjek</option>
+                                    <option value="product">Pertanyaan Produk</option>
+                                    <option value="order">Status Pesanan</option>
+                                    <option value="shipping">Pengiriman</option>
+                                    <option value="return">Pengembalian</option>
+                                    <option value="complaint">Keluhan</option>
+                                    <option value="suggestion">Saran</option>
+                                    <option value="partnership">Kerjasama</option>
+                                    <option value="other">Lainnya</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Pesan *</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>Kirim via WhatsApp</span>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Contact Details -->
+                    <div class="contact-details">
+                        <h2>Informasi Kontak</h2>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h4>Alamat Kantor Pusat</h4>
+                                <p>Jl. Thamrin No. 1<br>Jakarta Pusat 10310<br>Indonesia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h4>Telepon & WhatsApp</h4>
+                                <p>087886425562<br>Tersedia 24/7 untuk bantuan darurat</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h4>Email</h4>
+                                <p>info@shopfusion.com<br>support@shopfusion.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h4>Jam Operasional</h4>
+                                <p>Senin - Jumat: 08:00 - 22:00<br>Sabtu - Minggu: 09:00 - 21:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Store Locations -->
+        <section class="store-locations">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Lokasi Toko</h2>
+                    <p>Kunjungi toko fisik kami untuk pengalaman berbelanja langsung</p>
+                </div>
+                
+                <div class="stores-grid" id="storesGrid">
+                    <!-- Store locations will be populated here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <div class="container">
+                <h2>Peta Lokasi</h2>
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613!3d-6.1944491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sJl.%20Thamrin%2C%20Jakarta%20Pusat!5e0!3m2!1sen!2sid!4v1635123456789!5m2!1sen!2sid"
+                            width="100%" 
+                            height="400" 
+                            style="border:0; border-radius: 1rem;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Pertanyaan Umum</h2>
+                    <p>Jawaban untuk pertanyaan yang sering diajukan</p>
+                </div>
+                
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>Bagaimana cara melacak pesanan saya?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Setelah pesanan diproses, Anda akan menerima nomor tracking melalui WhatsApp. Gunakan nomor tersebut untuk melacak status pengiriman secara real-time.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>Berapa lama waktu pengiriman?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Waktu pengiriman bervariasi berdasarkan jarak: 1-2 jam untuk jarak ≤5km, 2-4 jam untuk 6-10km, 4-8 jam untuk 11-20km, dan 1-3 hari untuk jarak lebih jauh.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>Apakah ada garansi untuk produk?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ya, semua produk dilengkapi dengan garansi resmi dari manufacturer. Periode garansi bervariasi tergantung jenis produk.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>Bagaimana kebijakan pengembalian?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Kami menerima pengembalian dalam 7 hari setelah pembelian dengan kondisi produk masih dalam keadaan baik dan kemasan asli.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>Apakah tersedia layanan pemasangan?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ya, untuk produk tertentu seperti furniture dan elektronik besar, kami menyediakan layanan pemasangan dengan biaya tambahan.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>Bagaimana cara mendapatkan diskon?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ikuti media sosial kami dan berlangganan newsletter untuk mendapatkan kode promo eksklusif. Kami juga sering mengadakan flash sale dan promo khusus.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="logo-text">
+                            <span class="brand-name">ShopFusion</span>
+                            <span class="brand-tagline">Modern Shopping Experience</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Platform e-commerce modern dengan teknologi terdepan untuk pengalaman berbelanja yang tak terlupakan.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kategori</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#products">Elektronik</a></li>
+                        <li><a href="index.html#products">Fashion</a></li>
+                        <li><a href="index.html#products">Perabotan</a></li>
+                        <li><a href="index.html#products">Dapur</a></li>
+                        <li><a href="index.html#products">Olahraga</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Layanan</h4>
+                    <ul class="footer-links">
+                        <li><a href="#shipping">Pengiriman</a></li>
+                        <li><a href="#returns">Pengembalian</a></li>
+                        <li><a href="#support">Dukungan</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#track">Lacak Pesanan</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>087886425562</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@shopfusion.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jakarta, Indonesia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 ShopFusion. Semua hak dilindungi.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#privacy">Kebijakan Privasi</a>
+                        <a href="#terms">Syarat & Ketentuan</a>
+                        <a href="#cookies">Kebijakan Cookie</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/distance-calculator.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>
+

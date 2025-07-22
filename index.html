@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopFusion - E-commerce Modern</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <h2>ShopFusion</h2>
+            </div>
+            <div class="loading-spinner"></div>
+            <p>Memuat pengalaman berbelanja terbaik...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="brand-name">ShopFusion</span>
+                        <span class="brand-tagline">Modern Shopping Experience</span>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="nav-menu" id="navMenu">
+                    <a href="#home" class="nav-link active">Beranda</a>
+                    <a href="#products" class="nav-link">Produk</a>
+                    <a href="#categories" class="nav-link">Kategori</a>
+                    <a href="#about" class="nav-link">Tentang</a>
+                    <a href="contact.html" class="nav-link">Kontak</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <button class="action-btn search-btn" id="searchToggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="action-btn theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="action-btn cart-toggle" id="cartToggle">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <div class="search-header">
+                <h2>Cari Produk</h2>
+                <button class="search-close" id="searchClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-input-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Ketik untuk mencari produk...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <div class="search-suggestions" id="searchSuggestions">
+                <div class="suggestion-category">
+                    <h4>Kategori Populer</h4>
+                    <div class="suggestion-items">
+                        <span class="suggestion-item">Elektronik</span>
+                        <span class="suggestion-item">Fashion</span>
+                        <span class="suggestion-item">Perabotan</span>
+                        <span class="suggestion-item">Dapur</span>
+                    </div>
+                </div>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Keranjang Belanja</h3>
+            <button class="cart-close" id="cartClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-content">
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be populated here -->
+            </div>
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">Rp 0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Ongkir</span>
+                    <span id="cartShipping">Rp 0</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="cartTotal">Rp 0</span>
+                </div>
+            </div>
+            <div class="cart-actions">
+                <button class="btn btn-outline" onclick="clearCart()">
+                    <i class="fas fa-trash"></i>
+                    <span>Kosongkan</span>
+                </button>
+                <button class="btn btn-primary" onclick="goToCheckout()">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Checkout</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-background">
+                <div class="gradient-orb orb-1"></div>
+                <div class="gradient-orb orb-2"></div>
+                <div class="gradient-orb orb-3"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            Belanja Modern dengan
+                            <span class="gradient-text">Pengalaman Terbaik</span>
+                        </h1>
+                        <p class="hero-description">
+                            Temukan ribuan produk berkualitas dengan pengiriman cepat dan kalkulasi jarak real-time. 
+                            Nikmati pengalaman berbelanja yang tak terlupakan.
+                        </p>
+                        <div class="hero-actions">
+                            <button class="btn btn-primary btn-large" onclick="scrollToProducts()">
+                                <i class="fas fa-shopping-bag"></i>
+                                <span>Mulai Belanja</span>
+                            </button>
+                            <button class="btn btn-outline btn-large" onclick="openSearch()">
+                                <i class="fas fa-search"></i>
+                                <span>Cari Produk</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="floating-card card-1">
+                            <i class="fas fa-laptop"></i>
+                            <span>Elektronik</span>
+                        </div>
+                        <div class="floating-card card-2">
+                            <i class="fas fa-tshirt"></i>
+                            <span>Fashion</span>
+                        </div>
+                        <div class="floating-card card-3">
+                            <i class="fas fa-couch"></i>
+                            <span>Perabotan</span>
+                        </div>
+                        <div class="floating-card card-4">
+                            <i class="fas fa-utensils"></i>
+                            <span>Dapur</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3>Pengiriman Cepat</h3>
+                        <p>Kalkulasi jarak real-time dan pengiriman express ke seluruh Indonesia</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Pembayaran Aman</h3>
+                        <p>Transaksi terlindungi dengan enkripsi tingkat bank</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Support 24/7</h3>
+                        <p>Tim customer service siap membantu kapan saja</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <h3>Garansi Return</h3>
+                        <p>Jaminan pengembalian 100% jika tidak puas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories" id="categories">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Kategori Populer</h2>
+                    <p class="section-description">Jelajahi berbagai kategori produk pilihan</p>
+                </div>
+                <div class="categories-grid" id="categoriesGrid">
+                    <!-- Categories will be populated here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products" id="products">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Produk Unggulan</h2>
+                    <p class="section-description">Koleksi terbaik dengan kualitas premium</p>
+                </div>
+                
+                <div class="products-controls">
+                    <div class="filter-controls">
+                        <select class="filter-select" id="categoryFilter">
+                            <option value="all">Semua Kategori</option>
+                        </select>
+                        <select class="filter-select" id="sortFilter">
+                            <option value="name">Urutkan: Nama</option>
+                            <option value="price-low">Harga: Rendah ke Tinggi</option>
+                            <option value="price-high">Harga: Tinggi ke Rendah</option>
+                            <option value="category">Kategori</option>
+                        </select>
+                    </div>
+                    <div class="view-controls">
+                        <button class="view-btn active" data-view="grid" id="gridView">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list" id="listView">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be populated here -->
+                </div>
+
+                <div class="load-more-container">
+                    <button class="btn btn-outline" id="loadMoreBtn">
+                        <i class="fas fa-plus"></i>
+                        <span>Muat Lebih Banyak</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <div class="newsletter-text">
+                        <h3>Dapatkan Update Terbaru</h3>
+                        <p>Berlangganan newsletter untuk mendapatkan penawaran eksklusif dan produk terbaru</p>
+                    </div>
+                    <div class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" placeholder="Masukkan email Anda" class="newsletter-input">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Berlangganan</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="logo-text">
+                            <span class="brand-name">ShopFusion</span>
+                            <span class="brand-tagline">Modern Shopping Experience</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Platform e-commerce modern dengan teknologi terdepan untuk pengalaman berbelanja yang tak terlupakan.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kategori</h4>
+                    <ul class="footer-links">
+                        <li><a href="#products">Elektronik</a></li>
+                        <li><a href="#products">Fashion</a></li>
+                        <li><a href="#products">Perabotan</a></li>
+                        <li><a href="#products">Dapur</a></li>
+                        <li><a href="#products">Olahraga</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Layanan</h4>
+                    <ul class="footer-links">
+                        <li><a href="#shipping">Pengiriman</a></li>
+                        <li><a href="#returns">Pengembalian</a></li>
+                        <li><a href="#support">Dukungan</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#track">Lacak Pesanan</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>087886425562</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@shopfusion.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jakarta, Indonesia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 ShopFusion. Semua hak dilindungi.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#privacy">Kebijakan Privasi</a>
+                        <a href="#terms">Syarat & Ketentuan</a>
+                        <a href="#cookies">Kebijakan Cookie</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Detail Produk</h3>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Product details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="fab-container">
+        <button class="fab" id="fabMain">
+            <i class="fas fa-plus"></i>
+        </button>
+        <div class="fab-menu" id="fabMenu">
+            <button class="fab-item" onclick="scrollToTop()">
+                <i class="fas fa-arrow-up"></i>
+                <span>Ke Atas</span>
+            </button>
+            <button class="fab-item" onclick="openSearch()">
+                <i class="fas fa-search"></i>
+                <span>Cari</span>
+            </button>
+            <button class="fab-item" onclick="openCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Keranjang</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,323 @@
+[
+  {
+    "id": 1,
+    "name": "Smartwatch X1",
+    "category": "Elektronik",
+    "price": 1500000,
+    "description": "Smartwatch canggih dengan fitur kesehatan lengkap.",
+    "image": "product_1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Headphone Nirkabel Pro",
+    "category": "Elektronik",
+    "price": 850000,
+    "description": "Kualitas suara superior dengan konektivitas nirkabel.",
+    "image": "product_2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Kamera Mirrorless Alpha",
+    "category": "Elektronik",
+    "price": 12000000,
+    "description": "Abadikan momen dengan kualitas gambar profesional.",
+    "image": "product_3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Laptop Gaming Beast",
+    "category": "Elektronik",
+    "price": 25000000,
+    "description": "Performa tak tertandingi untuk gaming dan produktivitas.",
+    "image": "product_4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Speaker Bluetooth Mini",
+    "category": "Elektronik",
+    "price": 300000,
+    "description": "Suara jernih dan portabel untuk petualangan Anda.",
+    "image": "product_5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Kursi Ergonomis Premium",
+    "category": "Perabotan",
+    "price": 2500000,
+    "description": "Desain ergonomis untuk kenyamanan maksimal saat bekerja.",
+    "image": "product_6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Meja Kerja Minimalis",
+    "category": "Perabotan",
+    "price": 1200000,
+    "description": "Meja modern dengan penyimpanan tersembunyi.",
+    "image": "product_7.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Lampu Meja LED Smart",
+    "category": "Pencahayaan",
+    "price": 450000,
+    "description": "Pencahayaan adaptif dengan kontrol sentuh.",
+    "image": "product_8.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Rak Buku Dinding",
+    "category": "Perabotan",
+    "price": 700000,
+    "description": "Solusi penyimpanan stylish untuk koleksi buku Anda.",
+    "image": "product_9.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Sofa Modular Modern",
+    "category": "Perabotan",
+    "price": 7500000,
+    "description": "Fleksibel dan nyaman, cocok untuk ruang keluarga.",
+    "image": "product_10.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Panci Anti Lengket Set",
+    "category": "Dapur",
+    "price": 900000,
+    "description": "Memasak lebih mudah dengan lapisan anti lengket.",
+    "image": "product_11.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Blender Multifungsi",
+    "category": "Dapur",
+    "price": 600000,
+    "description": "Siapkan smoothie dan jus sehat dalam hitungan detik.",
+    "image": "product_12.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Mesin Kopi Espresso",
+    "category": "Dapur",
+    "price": 3500000,
+    "description": "Nikmati kopi ala kafe di rumah setiap hari.",
+    "image": "product_13.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Set Pisau Dapur Profesional",
+    "category": "Dapur",
+    "price": 550000,
+    "description": "Tajam dan tahan lama untuk semua kebutuhan memotong.",
+    "image": "product_14.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Oven Listrik Digital",
+    "category": "Dapur",
+    "price": 1800000,
+    "description": "Memanggang sempurna dengan kontrol suhu presisi.",
+    "image": "product_15.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Sepatu Lari Ultra Boost",
+    "category": "Fashion",
+    "price": 1700000,
+    "description": "Ringan dan responsif untuk performa lari terbaik.",
+    "image": "product_16.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Jaket Bomber Stylish",
+    "category": "Fashion",
+    "price": 950000,
+    "description": "Tampil trendi dengan jaket bomber serbaguna.",
+    "image": "product_17.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Tas Ransel Anti Maling",
+    "category": "Aksesoris",
+    "price": 600000,
+    "description": "Aman dan nyaman untuk perjalanan sehari-hari.",
+    "image": "product_18.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Kacamata Hitam Polarized",
+    "category": "Aksesoris",
+    "price": 400000,
+    "description": "Perlindungan mata maksimal dengan gaya modern.",
+    "image": "product_19.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Jam Tangan Klasik Kulit",
+    "category": "Aksesoris",
+    "price": 1100000,
+    "description": "Elegan dan timeless untuk setiap kesempatan.",
+    "image": "product_20.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Buku Fiksi Ilmiah Best Seller",
+    "category": "Buku",
+    "price": 120000,
+    "description": "Petualangan epik di dunia masa depan.",
+    "image": "product_21.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Ebook Resep Sehat",
+    "category": "Buku",
+    "price": 75000,
+    "description": "Kumpulan resep masakan sehat dan lezat.",
+    "image": "product_22.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Mainan Edukasi Anak",
+    "category": "Mainan",
+    "price": 250000,
+    "description": "Meningkatkan kreativitas dan motorik anak.",
+    "image": "product_23.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Puzzle 1000 Potong",
+    "category": "Mainan",
+    "price": 180000,
+    "description": "Tantangan seru untuk mengisi waktu luang.",
+    "image": "product_24.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Set Alat Lukis Lengkap",
+    "category": "Seni & Kerajinan",
+    "price": 700000,
+    "description": "Mulai petualangan seni Anda dengan set ini.",
+    "image": "product_25.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Benang Rajut Premium",
+    "category": "Seni & Kerajinan",
+    "price": 50000,
+    "description": "Lembut dan berkualitas tinggi untuk proyek rajutan Anda.",
+    "image": "product_26.jpg"
+  },
+  {
+    "id": 27,
+    "name": "Tanaman Hias Indoor",
+    "category": "Dekorasi Rumah",
+    "price": 150000,
+    "description": "Menyegarkan suasana rumah dengan sentuhan hijau.",
+    "image": "product_27.jpg"
+  },
+  {
+    "id": 28,
+    "name": "Vas Bunga Keramik",
+    "category": "Dekorasi Rumah",
+    "price": 200000,
+    "description": "Desain elegan untuk mempercantik bunga Anda.",
+    "image": "product_28.jpg"
+  },
+  {
+    "id": 29,
+    "name": "Diffuser Aromaterapi",
+    "category": "Kesehatan & Kecantikan",
+    "price": 350000,
+    "description": "Ciptakan suasana relaksasi dengan aroma favorit Anda.",
+    "image": "product_29.jpg"
+  },
+  {
+    "id": 30,
+    "name": "Set Skincare Anti-Aging",
+    "category": "Kesehatan & Kecantikan",
+    "price": 1200000,
+    "description": "Meremajakan kulit dan mengurangi tanda penuaan.",
+    "image": "product_30.jpg"
+  },
+  {
+    "id": 31,
+    "name": "Alat Fitness Portable",
+    "category": "Olahraga",
+    "price": 800000,
+    "description": "Tetap bugar di mana saja dengan alat praktis ini.",
+    "image": "product_31.jpg"
+  },
+  {
+    "id": 32,
+    "name": "Matras Yoga Anti-Slip",
+    "category": "Olahraga",
+    "price": 200000,
+    "description": "Nyaman dan aman untuk latihan yoga Anda.",
+    "image": "product_32.jpg"
+  },
+  {
+    "id": 33,
+    "name": "Pet Feeder Otomatis",
+    "category": "Hewan Peliharaan",
+    "price": 400000,
+    "description": "Memberi makan hewan peliharaan Anda secara teratur.",
+    "image": "product_33.jpg"
+  },
+  {
+    "id": 34,
+    "name": "Mainan Kucing Interaktif",
+    "category": "Hewan Peliharaan",
+    "price": 100000,
+    "description": "Hiburan tanpa henti untuk kucing kesayangan Anda.",
+    "image": "product_34.jpg"
+  },
+  {
+    "id": 35,
+    "name": "Perlengkapan Camping Lengkap",
+    "category": "Outdoor",
+    "price": 3000000,
+    "description": "Siap untuk petualangan alam bebas.",
+    "image": "product_35.jpg"
+  },
+  {
+    "id": 36,
+    "name": "Tenda Dome 4 Orang",
+    "category": "Outdoor",
+    "price": 1500000,
+    "description": "Mudah dipasang dan tahan cuaca.",
+    "image": "product_36.jpg"
+  },
+  {
+    "id": 37,
+    "name": "Set Alat Berkebun",
+    "category": "Rumah & Taman",
+    "price": 250000,
+    "description": "Lengkapi kebutuhan berkebun Anda.",
+    "image": "product_37.jpg"
+  },
+  {
+    "id": 38,
+    "name": "Pot Tanaman Minimalis",
+    "category": "Rumah & Taman",
+    "price": 80000,
+    "description": "Desain modern untuk tanaman kesayangan Anda.",
+    "image": "product_38.jpg"
+  },
+  {
+    "id": 39,
+    "name": "Alat Pembersih Otomatis",
+    "category": "Pembersihan",
+    "price": 1000000,
+    "description": "Membersihkan rumah dengan mudah dan efisien.",
+    "image": "product_39.jpg"
+  },
+  {
+    "id": 40,
+    "name": "Pembersih Lantai Serbaguna",
+    "category": "Pembersihan",
+    "price": 75000,
+    "description": "Membersihkan berbagai jenis lantai dengan cepat.",
+    "image": "product_40.jpg"
+  }
+]
+
