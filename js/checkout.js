@@ -8,7 +8,7 @@ class CheckoutManager {
         this.selectedStore = null;
         this.selectedShipping = 'delivery';
         this.selectedPayment = 'whatsapp';
-        this.whatsappNumber = '087886425562';
+        this.whatsappNumber = '6287886425562';
         
         this.init();
     }
