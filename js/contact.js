@@ -1,7 +1,7 @@
 // Contact page functionality
 class ContactManager {
     constructor() {
-        this.whatsappNumber = '087886425562';
+        this.whatsappNumber = '6287886425562';
         this.init();
     }
     
