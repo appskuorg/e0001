@@ -29,7 +29,7 @@ class ShopFusionState {
     
     async loadData() {
         try {
-            const response = await fetch('data/products.json');
+            const response = await fetch('data.json');
             this.products = await response.json();
             this.extractCategories();
         } catch (error) {
