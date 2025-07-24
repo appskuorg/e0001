@@ -28,23 +28,35 @@ class ShopFusionState {
     }
     
     async loadData() {
-    try {
-        const response = await fetch('data.json');
-        const data = await response.json();
-        
-        // Mengambil array products dari struktur data
-        this.products = data.products || [];
-        
-        this.extractCategories();
-        
-    } catch (error) {
-        console.error('Error loading data:', error);
-        this.showNotification('Gagal memuat data produk', 'error');
-        
-        // Fallback: set array kosong jika gagal load
-        this.products = [];
+        try {
+            const response = await fetch('data.json');
+            const data = await response.json();
+            
+            console.log('Raw data:', data); // Debug log
+            
+            // Pastikan data.products adalah array
+            if (data && Array.isArray(data.products)) {
+                this.products = data.products;
+            } else if (data && data.products) {
+                // Jika products ada tapi bukan array, coba konversi
+                this.products = [data.products];
+            } else {
+                // Fallback ke array kosong
+                this.products = [];
+            }
+            
+            console.log('Products loaded:', this.products); // Debug log
+            
+            this.extractCategories();
+            
+        } catch (error) {
+            console.error('Error loading data:', error);
+            this.showNotification('Gagal memuat data produk', 'error');
+            
+            // Pastikan selalu array kosong saat error
+            this.products = [];
+        }
     }
-}
     
     extractCategories() {
         const categoryMap = new Map();
@@ -66,24 +78,26 @@ class ShopFusionState {
     
     getCategoryIcon(category) {
         const iconMap = {
-            'Elektronik': 'fas fa-laptop',
-            'Fashion': 'fas fa-tshirt',
-            'Perabotan': 'fas fa-couch',
-            'Dapur': 'fas fa-utensils',
-            'Aksesoris': 'fas fa-gem',
-            'Buku': 'fas fa-book',
-            'Mainan': 'fas fa-gamepad',
-            'Seni & Kerajinan': 'fas fa-palette',
-            'Dekorasi Rumah': 'fas fa-home',
-            'Kesehatan & Kecantikan': 'fas fa-heart',
-            'Olahraga': 'fas fa-dumbbell',
-            'Hewan Peliharaan': 'fas fa-paw',
-            'Outdoor': 'fas fa-mountain',
-            'Rumah & Taman': 'fas fa-seedling',
-            'Pembersihan': 'fas fa-spray-can',
-            'Pencahayaan': 'fas fa-lightbulb'
+            'makanan': 'fas fa-utensils',
+            'minuman': 'fas fa-coffee',
+            'elektronik': 'fas fa-laptop',
+            'fashion': 'fas fa-tshirt',
+            'perabotan': 'fas fa-couch',
+            'dapur': 'fas fa-utensils',
+            'aksesoris': 'fas fa-gem',
+            'buku': 'fas fa-book',
+            'mainan': 'fas fa-gamepad',
+            'seni & kerajinan': 'fas fa-palette',
+            'dekorasi rumah': 'fas fa-home',
+            'kesehatan & kecantikan': 'fas fa-heart',
+            'olahraga': 'fas fa-dumbbell',
+            'hewan peliharaan': 'fas fa-paw',
+            'outdoor': 'fas fa-mountain',
+            'rumah & taman': 'fas fa-seedling',
+            'pembersihan': 'fas fa-spray-can',
+            'pencahayaan': 'fas fa-lightbulb'
         };
-        return iconMap[category] || 'fas fa-box';
+        return iconMap[category.toLowerCase()] || 'fas fa-box';
     }
     
     bindEvents() {
@@ -274,7 +288,7 @@ class ShopFusionState {
                         <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; border-radius: 0.5rem; cursor: pointer; transition: background 0.2s;" 
                              onmouseover="this.style.background='var(--surface-color)'" 
                              onmouseout="this.style.background='transparent'"
-                             onclick="shopFusionState.viewProduct(${product.id}); shopFusionState.closeSearch();">
+                             onclick="shopFusionState.viewProduct('${product.id}'); shopFusionState.closeSearch();">
                             <div style="width: 40px; height: 40px; background: var(--surface-color); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: var(--primary-color);">
                                 <i class="fas fa-box"></i>
                             </div>
@@ -458,11 +472,11 @@ class ShopFusionState {
                     <p class="product-description">${product.description}</p>
                     <div class="product-price">Rp ${product.price.toLocaleString('id-ID')}</div>
                     <div class="product-actions">
-                        <button class="btn btn-outline" onclick="shopFusionState.viewProduct(${product.id})">
+                        <button class="btn btn-outline" onclick="shopFusionState.viewProduct('${product.id}')">
                             <i class="fas fa-eye"></i>
                             <span>Detail</span>
                         </button>
-                        <button class="btn btn-primary" onclick="shopFusionState.addToCart(${product.id})" ${isInCart ? 'disabled' : ''}>
+                        <button class="btn btn-primary" onclick="shopFusionState.addToCart('${product.id}')" ${isInCart ? 'disabled' : ''}>
                             <i class="fas fa-${isInCart ? 'check' : 'cart-plus'}"></i>
                             <span>${isInCart ? 'Ditambahkan' : 'Tambah'}</span>
                         </button>
@@ -523,7 +537,7 @@ class ShopFusionState {
                         </div>
                     </div>
                     
-                    <button class="btn btn-primary" onclick="shopFusionState.addToCartWithQuantity(${product.id})" style="width: 100%; justify-content: center; margin-bottom: 1rem;">
+                    <button class="btn btn-primary" onclick="shopFusionState.addToCartWithQuantity('${product.id}')" style="width: 100%; justify-content: center; margin-bottom: 1rem;">
                         <i class="fas fa-cart-plus"></i>
                         <span>Tambah ke Keranjang</span>
                     </button>
@@ -649,14 +663,14 @@ class ShopFusionState {
                     <div style="font-weight: 600; margin-bottom: 0.25rem;">${item.name}</div>
                     <div style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Rp ${item.price.toLocaleString('id-ID')}</div>
                     <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <button onclick="shopFusionState.updateCartQuantity(${item.id}, ${item.quantity - 1})" style="width: 24px; height: 24px; border: 1px solid var(--border-color); background: var(--surface-color); border-radius: 0.25rem; cursor: pointer; font-size: 0.75rem;">
+                        <button onclick="shopFusionState.updateCartQuantity('${item.id}', ${item.quantity - 1})" style="width: 24px; height: 24px; border: 1px solid var(--border-color); background: var(--surface-color); border-radius: 0.25rem; cursor: pointer; font-size: 0.75rem;">
                             <i class="fas fa-minus"></i>
                         </button>
                         <span style="min-width: 30px; text-align: center; font-weight: 600;">${item.quantity}</span>
-                        <button onclick="shopFusionState.updateCartQuantity(${item.id}, ${item.quantity + 1})" style="width: 24px; height: 24px; border: 1px solid var(--border-color); background: var(--surface-color); border-radius: 0.25rem; cursor: pointer; font-size: 0.75rem;">
+                        <button onclick="shopFusionState.updateCartQuantity('${item.id}', ${item.quantity + 1})" style="width: 24px; height: 24px; border: 1px solid var(--border-color); background: var(--surface-color); border-radius: 0.25rem; cursor: pointer; font-size: 0.75rem;">
                             <i class="fas fa-plus"></i>
                         </button>
-                        <button onclick="shopFusionState.removeFromCart(${item.id})" style="width: 24px; height: 24px; border: 1px solid var(--error-color); background: var(--error-color); color: white; border-radius: 0.25rem; cursor: pointer; font-size: 0.75rem; margin-left: auto;">
+                        <button onclick="shopFusionState.removeFromCart('${item.id}')" style="width: 24px; height: 24px; border: 1px solid var(--error-color); background: var(--error-color); color: white; border-radius: 0.25rem; cursor: pointer; font-size: 0.75rem; margin-left: auto;">
                             <i class="fas fa-trash"></i>
                         </button>
                     </div>
@@ -776,4 +790,3 @@ let shopFusionState;
 document.addEventListener('DOMContentLoaded', function() {
     shopFusionState = new ShopFusionState();
 });
-
