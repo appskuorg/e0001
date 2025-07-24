@@ -28,15 +28,23 @@ class ShopFusionState {
     }
     
     async loadData() {
-        try {
-            const response = await fetch('data.json');
-            this.products = await response.json();
-            this.extractCategories();
-        } catch (error) {
-            console.error('Error loading data:', error);
-            this.showNotification('Gagal memuat data produk', 'error');
-        }
+    try {
+        const response = await fetch('data.json');
+        const data = await response.json();
+        
+        // Mengambil array products dari struktur data
+        this.products = data.products || [];
+        
+        this.extractCategories();
+        
+    } catch (error) {
+        console.error('Error loading data:', error);
+        this.showNotification('Gagal memuat data produk', 'error');
+        
+        // Fallback: set array kosong jika gagal load
+        this.products = [];
     }
+}
     
     extractCategories() {
         const categoryMap = new Map();
